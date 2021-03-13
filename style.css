@@ -1,5 +1,6 @@
 .player {
     width: 100%;
+    position: relative;
 }
 
 video {
@@ -7,5 +8,23 @@ video {
 }
 
 .timing {
-    width: 100%;
+    width: 85%;
+    position: absolute;
+    left: 12%;
+    bottom: 60px;
+}
+
+.controls {
+    position: absolute;
+    left: 1%;
+    bottom: 60px;
+    display: flex;
+}
+
+.volume {
+    margin-left: 15px;
+}
+
+.fas {
+    margin-left: 15px;
 }
