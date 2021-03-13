@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+        integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>ТЕСТОВАЯ</title>
+</head>
+
+
+<body>
+    <div> Текущеее время <span class="currentTime">0</span></div>
+    <div class="player">
+        <video src="video/VID-20200809-WA0048.mp4"></video>
+        <input type="range" class="timing" value="0" min="0" max="100" step="0.001">
+    </div>
+    <i id="play" class="fas fa-play"></i>
+    <i id="pause" class="fas fa-pause"></i>
+    <input type="range" min="0" class="volume" max="1" step="0.01">
+    <script>
+        let playerEl = document.querySelector(".player")
+        let video = document.querySelector("video");
+        let timing = document.querySelector(".timing");
+        let volume = document.querySelector(".volume");
+        let play = document.getElementById("play");
+        let pause = document.getElementById("pause");
+        let currentTimeEl = document.querySelector(".currentTime")
+
+        let progressId = null;
+
+        let wasVideoPlaying = false;
+
+        window.addEventListener("load", function () {
+            timing.min = 0;
+            timing.max = video.duration;
+        })
+
+        function changeProgress() {
+            timing.value = video.currentTime;
+            currentTimeEl.innerHTML = video.currentTime;
+        }
+
+        play.addEventListener("click", function () {
+            if (video.paused) {
+                video.play();
+                progressId = setInterval(changeProgress, 100);
+            }
+        })
+        timing.addEventListener("change", function () {
+            video.currentTime = timing.value;
+            if (wasVideoPlaying) {
+                video.play()
+                progressId = setInterval(changeProgress, 100)
+            } else {
+                changeProgress();
+            }
+        })
+
+
+
+        timing.addEventListener("mousedown", function () {
+            wasVideoPlaying = !video.paused;
+            if (wasVideoPlaying) {
+                video.pause();
+                clearInterval(progressId)
+            }
+        })
+
+        pause.addEventListener("click", function () {
+            if (!video.paused) {
+                video.pause();
+                clearInterval(progressId);
+            }
+        })
+
+        video.addEventListener("ended", function () {
+            clearInterval(progressId);
+        })
+
+        volume.addEventListener("change", function () {
+            video.volume = volume.value;
+        })
+        video.addEventListener("click", function () {
+            if (video.paused) {
+                video.play();
+                progressId = setInterval(changeProgress, 100);
+            } else {
+                video.pause();
+                clearInterval(progressId);
+            }
+        })
+    </script>
+</body>
+
+</html>
