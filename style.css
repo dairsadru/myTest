@@ -13,3 +13,18 @@ video {
     left: 12%;
     bottom: 60px;
 }
+
+.controls {
+    position: absolute;
+    left: 1%;
+    bottom: 60px;
+    display: flex;
+}
+
+.volume {
+    margin-left: 15px;
+}
+
+.fas {
+    margin-left: 15px;
+}
