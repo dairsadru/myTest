@@ -1,15 +1,56 @@
-.player {
-    width: 100%;
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.slider {
+    height: 100vh;
     position: relative;
+    overflow: hidden;
 }
 
-video {
+.slider-item {
     width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
 }
 
-.timing {
-    width: 85%;
+.slider-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hidden-slide {
+    visibility: hidden;
+}
+
+.fas.fa-spinner.fa-spin {
+    font-size: 50px;
+    color: coral;
     position: absolute;
-    left: 12%;
-    bottom: 60px;
+    left: calc(50% - 25px);
+    top: calc(50% - 25px);
+}
+
+.slider-leftArrow,
+.slider-rightArrow {
+    position: absolute;
+    z-index: 3;
+    top: 47%;
+    color: coral;
+    cursor: pointer;
+    font-size: 50px;
+}
+
+.slider-leftArrow {
+    left: 5%;
+}
+
+.slider-rightArrow {
+    right: 5%;
 }
