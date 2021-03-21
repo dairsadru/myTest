@@ -4,14 +4,14 @@
 }
 
 #game {
-    width: 450px;
+    width: 150px;
     margin: 50px auto;
     border-collapse: collapse;
 }
 
 #game td {
-    width: 150px;
-    height: 150px;
+    width: 50px;
+    height: 50px;
     border: 1px solid #000;
     text-align: center;
 }
