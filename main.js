@@ -32,6 +32,7 @@ let ticTakToe = {
         }
     },
 
+
     //Инициализация обработчиков сообытий
     initEventHandlers() {
         // Ставим обработчик, при клике на таблицу вызовется функция this.cellClickHandler
@@ -237,4 +238,48 @@ let ticTakToe = {
 };
 
 // Запускаем игру при полной загрузек страницы.
-window.addEventListener('load', ticTakToe.init())
+ticTakToe.init();
+
+
+let green = document.getElementById('green');
+let red = document.getElementById('red');
+let blue = document.getElementById('blue');
+let orange = document.getElementById('orange');
+let black = document.getElementById('black');
+let brown = document.getElementById('brown');
+let yellow = document.getElementById('yellow');
+let gray = document.getElementById('gray');
+
+
+green.addEventListener('click', function () {
+    document.body.style.background = "green";
+    ticTakToe.gameTableElement.style.background = 'white'
+})
+red.addEventListener('click', function () {
+    document.body.style.background = "red";
+    ticTakToe.gameTableElement.style.background = 'white'
+})
+black.addEventListener('click', function () {
+    document.body.style.background = "black";
+    ticTakToe.gameTableElement.style.background = 'white'
+})
+gray.addEventListener('click', function () {
+    document.body.style.background = "gray";
+    ticTakToe.gameTableElement.style.background = 'white'
+})
+brown.addEventListener('click', function () {
+    document.body.style.background = "brown";
+    ticTakToe.gameTableElement.style.background = 'white'
+})
+yellow.addEventListener('click', function () {
+    document.body.style.background = "yellow";
+    ticTakToe.gameTableElement.style.background = 'white'
+})
+orange.addEventListener('click', function () {
+    document.body.style.background = "orange";
+    ticTakToe.gameTableElement.style.background = 'white'
+})
+blue.addEventListener('click', function () {
+    document.body.style.background = "blue";
+    ticTakToe.gameTableElement.style.background = 'white'
+})
