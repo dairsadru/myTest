@@ -8,6 +8,7 @@ body {
     background-color: rgb(245, 239, 153);
 }
 
+
 #game {
     width: 150px;
     margin: 50px auto;
@@ -28,6 +29,8 @@ button {
     transition-duration: 0.3s;
     box-shadow: 0 0 3px white;
     border-radius: 3px;
+    width: 150px;
+    color: white;
 }
 
 button:active {
@@ -66,5 +69,4 @@ button:active {
 
 #green {
     background-color: green;
-    margin-left: 20px;
 }

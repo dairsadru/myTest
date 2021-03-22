@@ -258,28 +258,53 @@ green.addEventListener('click', function () {
 red.addEventListener('click', function () {
     document.body.style.background = "red";
     ticTakToe.gameTableElement.style.background = 'white'
+
+    br.style.color = "white";
 })
+
+let h2 = document.querySelector("h2");
+let h3 = document.querySelector("h3");
+let br = document.getElementById("break");
 black.addEventListener('click', function () {
     document.body.style.background = "black";
+    h2.style.color = "white";
+    h3.style.color = "white";
+    br.style.color = "red";
     ticTakToe.gameTableElement.style.background = 'white'
 })
 gray.addEventListener('click', function () {
     document.body.style.background = "gray";
     ticTakToe.gameTableElement.style.background = 'white'
+
+    h2.style.color = "white";
+    h3.style.color = "white";
+    br.style.color = "red";
 })
 brown.addEventListener('click', function () {
     document.body.style.background = "brown";
     ticTakToe.gameTableElement.style.background = 'white'
+
+    br.style.color = "red";
 })
 yellow.addEventListener('click', function () {
     document.body.style.background = "yellow";
     ticTakToe.gameTableElement.style.background = 'white'
+
+    h2.style.color = "black";
+    h3.style.color = "black";
+    br.style.color = "red";
 })
 orange.addEventListener('click', function () {
     document.body.style.background = "orange";
     ticTakToe.gameTableElement.style.background = 'white'
+
+    br.style.color = "white";
 })
 blue.addEventListener('click', function () {
     document.body.style.background = "blue";
     ticTakToe.gameTableElement.style.background = 'white'
+
+    h2.style.color = "white";
+    h3.style.color = "white";
+    br.style.color = "red";
 })
