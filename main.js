@@ -104,15 +104,7 @@ let ticTakToe = {
      * @param {Event} event 
      * @param { HTMLElement} event.target
      */
-    fillCell(event) {
-        // Получаем строку и колонку куда кликнули
-        let row = +event.target.dataset.row;
-        let col = +event.target.dataset.col;
 
-        //Заполняем ячейку и ставим значение в массиве, в свойстве mapValues.
-        this.mappValues[row][col] = this.phase;
-        event.target.textContent = this.phase;
-    },
     /**
      * Проверка есть ли выигрышная систуация н карте.
      * @returns {boolean} Вернет true, если игра выиграна, иначе false.
@@ -219,12 +211,21 @@ let ticTakToe = {
     setStatusStopped() {
         this.status = 'stopped';
     },
+    fillCell(event) {
+        // Получаем строку и колонку куда кликнули
+        let row = +event.target.dataset.row;
+        let col = +event.target.dataset.col;
+
+        //Заполняем ячейку и ставим значение в массиве, в свойстве mapValues.
+        this.mappValues[row][col] = this.phase;
+        event.target.textContent = this.phase;
+    },
     /**
      * Сообщает о победе.
      */
     sayWonPhrase() {
         let figure = this.phase === 'X' ? 'Крестики' : 'Нолики';
-        alert(`${figure} выиграли`)
+        Swal.fire(`${figure} выиграли`)
     },
 
     /**
