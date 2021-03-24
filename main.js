@@ -226,11 +226,15 @@ let ticTakToe = {
     sayWonPhrase() {
         let figure = this.phase === 'X' ? 'Крестики' : 'Нолики';
         Swal.fire({
-            position: 'top-end',
             icon: 'success',
+            timer: 2000,
             title: `${figure} выиграли`,
-            showConfirmButton: false,
-            timer: 1500
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
         })
     },
 
